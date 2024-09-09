@@ -60,11 +60,24 @@ def data_preparation(df):
     # we want only customers shopped more than 2 times
     clv = clv[clv['frequency']>1]
 
+    print('Archivo de frecuencia, recencia, value correctamente generado')
     return clv
 
 # Exportamos la tabla rfm
 
 def data_exporting(df, filename):
-    dfp.to_csv(os.path.join('../data/processed/', filename))
+    
+    df.to_csv(os.path.join('../data/processed/', filename))
     print(filename, 'exportado correctamente en la carpeta processed')
-  
+
+
+def main():
+    # Lectura del archivo original
+    df1 = read_file_csv('Online_Retail.csv')
+
+    # Generación del archivo clv  customer lifetime value
+    clv1 = data_preparation(df1)
+
+    # Exporta clv1
+    data_exporting(clv1, 'rfm_data.csv')
+ 
