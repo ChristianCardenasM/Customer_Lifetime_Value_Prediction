@@ -8,17 +8,17 @@ import pickle
 import os
 
 
-def model_segmentation(df, filename, t):
+def model_segmentation(filename, t=180):
 
     clv = pd.read_csv(os.path.join('../data/processed', filename))
     print(filename, ' cargado correctamente')
 
     # Leemos los modelo entrenado para usarlo
     bgf_package = '../models/bgf_model.pkl'
-    bgf_model = pickle.load(open(bgf_package, 'rb'))
+    bgf_loaded = pickle.load(open(bgf_package, 'rb'))
 
     ggf_package = '../models/ggf_model.pkl'
-    ggf_model = pickle.load(open(ggf_package, 'rb'))
+    ggf_loaded = pickle.load(open(ggf_package, 'rb'))
     
     print('Modelos importado correctamente')
 
@@ -28,14 +28,13 @@ def model_segmentation(df, filename, t):
     bgf_loaded.conditional_expected_number_of_purchases_up_to_time(t, clv['frequency'], clv['recency'], clv['T'])
 
     # Customer Lifetime Value
-    clv['6_Months_CLV']=ggf.customer_lifetime_value(bgf,
+    clv['6_Months_CLV']=ggf_loaded.customer_lifetime_value(bgf_loaded,
                                                     clv["frequency"],
                                                     clv["recency"],
                                                     clv["T"],
                                                     clv["monetary_value"],
-                                                    time=t,
+                                                    time=t/30,
                                                     freq='D',
                                                     discount_rate=0.01)
 
     return clv
-    

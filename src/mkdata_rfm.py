@@ -3,12 +3,13 @@
 
 import pandas as pd
 import numpy as np
+import lifetimes
 import os
 
 # Leemos los archivos csv
 
 def read_file_csv(filename):
-    df = pd.read_csv(os.path.join('../data/raw/', filename)).set_index('ID')
+    df = pd.read_csv(os.path.join('../data/raw/', filename))
     print(filename, ' cargado correctamente')
     return df
 
@@ -66,4 +67,4 @@ def data_preparation(df):
 def data_exporting(df, filename):
     dfp.to_csv(os.path.join('../data/processed/', filename))
     print(filename, 'exportado correctamente en la carpeta processed')
-    
+  
