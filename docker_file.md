@@ -4,7 +4,10 @@
 
 **Paso 1: Fork del Repositorio Original**
 ```
-En el navegador, inicie sesión en Github. Luego, vaya al enlace del proyecto original (https://github.com/ChristianCardenasM/Customer_Lifetime_Value_Prediction), 
+En el navegador, inicie sesión en Github. Luego, acceda proyecto original:
+
+https://github.com/ChristianCardenasM/Customer_Lifetime_Value_Prediction
+
 hacer click en "Fork" para copiar el proyecto en su usuario de Github.
 ```
 **Paso 2: Levantar el contenedor de Python**

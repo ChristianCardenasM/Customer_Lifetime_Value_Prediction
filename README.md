@@ -5,7 +5,7 @@ In this repo, Customer Lifetime Value predicted using probabilistic model BG/NBD
 <p style="margin-left: 20px;">Publicación del articulo en medium: 
 <a href="https://medium.com/@ugursavci/customer-lifetime-value-prediction-in-python-89e4a50df12e"><i>link-medium</i></a></p>
 
-<p style="margin-left: 20px;">Repositorio en GitHub:
+<p style="margin-left: 20px;">Repositorio en GitHub del autor original:
 <a ref="https://github.com/ugursavci/Customer_Lifetime_Value_Prediction"><i>link-github</i></a></p>
 
 
@@ -23,7 +23,7 @@ In this repo, Customer Lifetime Value predicted using probabilistic model BG/NBD
     ├── notebooks             <- Jupyter notebooks
     │
     ├── src                   <- Source code for use in this project.
-    │   ├── __init__.py       <- Makes src a Python module
+    │   ├── _pycache_         <- Folder created making a Python module
     │   │
     │   ├── mkdata_rfm.py     <- Script de preparación de data
     │   │
@@ -34,6 +34,5 @@ In this repo, Customer Lifetime Value predicted using probabilistic model BG/NBD
     ├── README.md             <- Organización del proyecto
     |
     └── requirements.txt      <- Módulos requeridos: lifetimes
-
 
 --------
