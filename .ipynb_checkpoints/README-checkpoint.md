@@ -2,59 +2,38 @@
 
 In this repo, Customer Lifetime Value predicted using probabilistic model BG/NBD and Gamma-Gamma model.
 
-Publicación del articulo en medium: 
-<a href="https://medium.com/@ugursavci/customer-lifetime-value-prediction-in-python-89e4a50df12e">link</a>
+<p style="margin-left: 20px;">Publicación del articulo en medium: 
+<a href="https://medium.com/@ugursavci/customer-lifetime-value-prediction-in-python-89e4a50df12e"><i>link-medium</i></a></p>
 
-Repositorio en GitHub:
-<a ref="https://github.com/ugursavci/Customer_Lifetime_Value_Prediction">link en github</a>
+<p style="margin-left: 20px;">Repositorio en GitHub:
+<a ref="https://github.com/ugursavci/Customer_Lifetime_Value_Prediction"><i>link-github</i></a></p>
 
-├── data
 
-|   ├── processed
+## Organización del Proyecto
 
-|   ├── raw
+------------
 
-|   ├── segments
+    ├── data
+    │   ├── processed         <- Data de frecuancia recencia y value time.
+    │   ├── raw               <- Data Original
+    │   └── segments          <- Data con los segmentos obtenidos
+    │
+    ├── models                <- Modelos entrenados
+    │
+    ├── notebooks             <- Jupyter notebooks
+    │
+    ├── src                   <- Source code for use in this project.
+    │   ├── __init__.py       <- Makes src a Python module
+    │   │
+    │   ├── mkdata_rfm.py     <- Script de preparación de data
+    │   │
+    │   ├── model_segment.py  <- Script de segmentación del modelo
+    │
+    ├── docker_file.md        <- Pasos para clonar y comprobar el proyecto.
+    |
+    ├── README.md             <- Organización del proyecto
+    |
+    └── requirements.txt      <- Módulos requeridos: lifetimes
 
-|
 
-├── models
-
-├── notebooks
-
-|   
-
-├── src
-
-├── LICENSE
-
-├── README.md          <- The top-level README for developers using this project.
-
-├── data
-
-│   ├── scores         <- Results from scoring model.
-
-│   ├── processed      <- The final, canonical data sets for modeling.
-
-│   └── raw            <- The original, immutable data dump.
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering)
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-├── src                <- Source code for use in this project.
-│   ├── __init__.py    <- Makes src a Python module
-│   │
-│   ├── make_dataset.py<- Script to prepare data
-│   │
-│   ├── train.py       <- Script to train models
-│   │                    
-│   ├── evaluate.py    <- Script to evaluate models using kpi's
-│   │
-│   └── predict.py     <- Script to use trained models to make predictions
-│
-└── LICENSE            <- License
+--------
