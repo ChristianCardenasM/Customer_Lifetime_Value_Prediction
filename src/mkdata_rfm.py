@@ -1,5 +1,5 @@
-# Script de Preparación de Datos
-###################################
+# Script de Preparación de Datos, generación del archivo rfm recency, frecuency, value.
+######################################################################################
 
 import pandas as pd
 import numpy as np
@@ -63,7 +63,7 @@ def data_preparation(df):
     print('Archivo de frecuencia, recencia, value correctamente generado')
     return clv
 
-# Exportamos la tabla rfm
+# Generación del archivo rfm
 
 def data_exporting(df, filename):
     
@@ -80,4 +80,7 @@ def main():
 
     # Exporta clv1
     data_exporting(clv1, 'rfm_data.csv')
- 
+
+
+if __name__ == "__main__":
+    main()

@@ -8,12 +8,15 @@ import pickle
 import os
 
 
-def model_segmentation(filename, t=180):
+def model_segmentation(file_rfm, file_segmento, t=180):
 
-    clv = pd.read_csv(os.path.join('../data/processed', filename))
-    print(filename, ' cargado correctamente')
+    # Lectura del archivo rfm recency, frecuencia value.
 
-    # Leemos los modelo entrenado para usarlo
+    clv = pd.read_csv(os.path.join('../data/processed', file_rfm))
+    print(file_rfm, ' cargado correctamente')
+
+    # Leemos los modelos entrenados para usarlo
+    
     bgf_package = '../models/bgf_model.pkl'
     bgf_loaded = pickle.load(open(bgf_package, 'rb'))
 
@@ -24,6 +27,7 @@ def model_segmentation(filename, t=180):
 
     # Number of purchases
     # t = 180 # 30 day period
+    
     clv['expected_purc_6_months'] = \
     bgf_loaded.conditional_expected_number_of_purchases_up_to_time(t, clv['frequency'], clv['recency'], clv['T'])
 
@@ -37,4 +41,17 @@ def model_segmentation(filename, t=180):
                                                     freq='D',
                                                     discount_rate=0.01)
 
+    clv.to_csv(f'../data/segments/{file_segmento}')
+    print(f'Archivo de segmentación {file_segmento} generado y guardado')
+
     return clv
+
+
+def main():
+    
+    df = model_segmentation(file_rfm='rfm_data.csv', file_segmento='segmentos.csv')
+    print('Finalizó la segmentación de la base')
+
+
+if __name__ == "__main__":
+    main()
