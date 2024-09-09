@@ -7,6 +7,7 @@ import dill
 import pickle
 import os
 
+#from mkdata_rfm import read_file_csv
 
 def model_segmentation(file_rfm, file_segmento, t=180):
 
